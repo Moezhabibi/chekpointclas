@@ -1,14 +1,16 @@
 
+import React from 'react';
 import './App.css';
+import Profil from './component/Profil';
 
 class App extends React.Component{
   constructor(){
     super()
     this.state={
-      person : [
-        FullName , bio , imgSrc , profession
+      person : {
+        FullName :"Moez", bio:"Student" , imgSrc:"/logo512.png" , profession:"FullStackJS Developer"
 
-      ],
+    },
       show : false,
     }
   }
@@ -20,20 +22,16 @@ class App extends React.Component{
         return(
           <div>
             
-            {
-              this.state.person.map(el=> 
-              <div>
-                <h2>{ el. FullName}</h2>
-                <h2>{el. bio}</h2>
-                <h2>{el. imgSrc}</h2>
-                <h2>{el. profession}</h2>
+            
+       
                 <button onClick={this.handleShow}>{this.state.show ? 'Hide' : 'Show'}</button>
                 {
-                  this.state.show && < handleShow = {this.state.person}> 
+                  this.state.show && <Profil person ={this.state.person}/>
                 }
-              </div>)
-            }
+        
+            
             </div>
+        )}}
            
           
         
@@ -42,5 +40,5 @@ class App extends React.Component{
       
 
 
-
+        
 export default App;
